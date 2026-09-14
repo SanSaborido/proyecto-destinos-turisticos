@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explora el Mundo - Destinos</title>
+    <link rel="stylesheet" href="estilosIA.css">
+</head>
+<body>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">ViajesIA</div>
+            <ul class="nav-links">
+                <li><a href="#destinos">Destinos</a></li>
+                <li><a href="#acerca">Acerca de</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECCIÓN DE DESTINOS (Interacción Estática) -->
+        <section id="destinos" class="seccion">
+            <h2>Nuestros Destinos</h2>
+            <p class="subtitulo">Elige tu entorno ideal para la próxima aventura.</p>
+
+            <div class="contenedor-tabs">
+                <!-- Radio buttons ocultos para manejar el estado -->
+                <input type="radio" id="tab-playa" name="categoria-destinos" checked>
+                <input type="radio" id="tab-montana" name="categoria-destinos">
+
+                <!-- Botones de las pestañas -->
+                <div class="tabs-botones">
+                    <label for="tab-playa" class="btn-tab btn-playa">Destinos de Playa</label>
+                    <label for="tab-montana" class="btn-tab btn-montana">Destinos de Montaña</label>
+                </div>
+
+                <!-- CONTENIDO: PLAYA -->
+                <div class="tab-contenido" id="contenido-playa">
+                    <div class="grid-destinos">
+                        <!-- Destino 1 -->
+                        <article class="tarjeta-destino">
+                            <img src="imagenes/brasil.jpg" alt="Río de Janeiro, Brasil">
+                            <div class="info-destino">
+                                <h3>Río de Janeiro (Brasil)</h3>
+                                <p>Disfruta de las icónicas playas de Copacabana e Ipanema, admira la majestuosidad del Cristo Redentor y contágiate de la vibrante energía y cultura carioca.</p>
+                                <a href="guias/riodejaneiro.pdf" class="btn-descarga" download>Descargar Itinerario (PDF)</a>
+                            </div>
+                        </article>
+                        <!-- Destino 2 -->
+                        <article class="tarjeta-destino">
+                            <img src="imagenes/mardel.jpg" alt="Mar del Plata, Argentina">
+                            <div class="info-destino">
+                                <h3>Mar del Plata (Argentina)</h3>
+                                <p>La ciudad balnearia más emblemática de Argentina. Disfruta de sus extensas playas, su clásica arquitectura costera y una excelente gastronomía de mar.</p>
+                                <a href="guias/mardel.pdf" class="btn-descarga" download>Descargar Itinerario (PDF)</a>
+                            </div>
+                        </article>
+                        <!-- Destino 3 -->
+                        <article class="tarjeta-destino">
+                            <img src="imagenes/caribe.jpg" alt="El Caribe">
+                            <div class="info-destino">
+                                <h3>El Caribe</h3>
+                                <p>El paraíso en la tierra. Relájate en kilómetros de arenas blancas, bajo la sombra de palmeras tropicales y sumérgete en el mar turquesa y cálido más famoso del mundo.</p>
+                                <a href="guias/caribe.pdf" class="btn-descarga" download>Descargar Itinerario (PDF)</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- CONTENIDO: MONTAÑA -->
+                <div class="tab-contenido" id="contenido-montana">
+                    <div class="grid-destinos">
+                        <!-- Destino 4 -->
+                        <article class="tarjeta-destino">
+                            <img src="imagenes/mendoza.jpg" alt="Mendoza, Argentina">
+                            <div class="info-destino">
+                                <h3>Mendoza (Argentina)</h3>
+                                <p>La tierra del sol y del buen vino. Descubre viñedos al pie de la imponente Cordillera de los Andes, ideal para el enoturismo y los deportes de aventura.</p>
+                                <a href="guias/mendoza.pdf" class="btn-descarga" download>Descargar Itinerario (PDF)</a>
+                            </div>
+                        </article>
+                        <!-- Destino 5 -->
+                        <article class="tarjeta-destino">
+                            <img src="imagenes/ushuaia.jpg" alt="Ushuaia, Argentina">
+                            <div class="info-destino">
+                                <h3>Ushuaia (Argentina)</h3>
+                                <p>La mítica "Ciudad del Fin del Mundo". Un lugar mágico donde la cordillera se encuentra con el mar, rodeada de glaciares, bosques milenarios y el Canal Beagle.</p>
+                                <a href="guias/ushuaia.pdf" class="btn-descarga" download>Descargar Itinerario (PDF)</a>
+                            </div>
+                        </article>
+                        <!-- Destino 6 -->
+                        <article class="tarjeta-destino">
+                            <img src="imagenes/bariloche.jpg" alt="Bariloche, Argentina">
+                            <div class="info-destino">
+                                <h3>Bariloche (Argentina)</h3>
+                                <p>Una joya de la Patagonia. Cerros nevados perfectos para esquiar, lagos de intenso azul cristalino y la mejor ruta del chocolate artesanal de sudamérica.</p>
+                                <a href="guias/bariloche.pdf" class="btn-descarga" download>Descargar Itinerario (PDF)</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: ACERCA DE -->
+        <section id="acerca" class="seccion bg-claro">
+            <div class="contenedor-acerca">
+                <h2>Acerca de Nosotros</h2>
+                <p>Somos <strong>ViajesIA</strong>, un equipo de apasionados por el mundo y sus paisajes. Desde hace más de 10 años, recorremos el planeta para traerte las mejores guías de viaje, garantizando que tu única preocupación sea disfrutar.</p>
+                <p>Este sitio es mantenido de forma independiente por nómadas digitales, asegurando que la información de cada destino es auténtica, probada y actualizada. Creemos firmemente que viajar es la mejor manera de enriquecer el alma.</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: CONTACTO -->
+        <section id="contacto" class="seccion">
+            <h2>Contacto</h2>
+            <p class="subtitulo">¿Tienes dudas o necesitas un plan a medida? Escríbenos.</p>
+            
+            <form action="#" class="formulario-contacto">
+                <div class="grupo-input">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez">
+                </div>
+                <div class="grupo-input">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required placeholder="tuemail@ejemplo.com">
+                </div>
+                <div class="grupo-input">
+                    <label for="mensaje">Tu mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required placeholder="¿En qué podemos ayudarte?"></textarea>
+                </div>
+                <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>&copy; 2026 ViajesIA - Todos los derechos reservados. HTML y CSS puro.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,348 @@
+/* ==========================================================================
+   RESET Y VARIABLES (Paleta de Colores)
+   ========================================================================== */
+:root {
+    /* Paleta de Colores */
+    --color-fondo: #F4F7F6;       /* Gris muy claro para fondos */
+    --color-texto: #333333;       /* Gris oscuro para lectura cómoda */
+    --color-primario: #2C3E50;    /* Azul Marino (NavBar, Footer, Textos Principales) */
+    
+    --color-playa: #E67E22;       /* Naranja cálido (Sol, arena) */
+    --color-montana: #27AE60;     /* Verde bosque (Naturaleza, altura) */
+    
+    --color-acento: #3498DB;      /* Azul claro para enlaces y botones */
+    --color-blanco: #FFFFFF;
+    
+    --sombra-tarjeta: 0 4px 10px rgba(0,0,0,0.1);
+    --radio-borde: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   BARRA DE NAVEGACIÓN
+   ========================================================================== */
+header {
+    background-color: var(--color-primario);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    color: var(--color-blanco);
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--color-playa);
+}
+
+/* ==========================================================================
+   SECCIONES GENERALES
+   ========================================================================== */
+.seccion {
+    padding: 4rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bg-claro {
+    background-color: var(--color-blanco);
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    max-width: 100%;
+}
+
+.seccion h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--color-primario);
+    margin-bottom: 0.5rem;
+}
+
+.subtitulo {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   INTERACCIÓN ESTÁTICA - PESTAÑAS (CSS PURO)
+   ========================================================================== */
+.contenedor-tabs {
+    margin-top: 2rem;
+}
+
+input[type="radio"][name="categoria-destinos"] {
+    display: none;
+}
+
+.tabs-botones {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.btn-tab {
+    padding: 10px 25px;
+    border-radius: var(--radio-borde);
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--color-blanco);
+    transition: opacity 0.3s, transform 0.2s;
+    opacity: 0.6;
+}
+
+.btn-playa {
+    background-color: var(--color-playa);
+}
+
+.btn-montana {
+    background-color: var(--color-montana);
+}
+
+.btn-tab:hover {
+    opacity: 0.8;
+}
+
+.tab-contenido {
+    display: none;
+    animation: fade-in 0.5s ease-in-out;
+}
+
+#tab-playa:checked ~ .tabs-botones .btn-playa {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(230, 126, 34, 0.4);
+}
+
+#tab-montana:checked ~ .tabs-botones .btn-montana {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(39, 174, 96, 0.4);
+}
+
+#tab-playa:checked ~ #contenido-playa {
+    display: block;
+}
+
+#tab-montana:checked ~ #contenido-montana {
+    display: block;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   GRILLA DE DESTINOS Y TARJETAS
+   ========================================================================== */
+.grid-destinos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.tarjeta-destino {
+    background-color: var(--color-blanco);
+    border-radius: var(--radio-borde);
+    overflow: hidden;
+    box-shadow: var(--sombra-tarjeta);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-destino:hover {
+    transform: translateY(-5px);
+}
+
+.tarjeta-destino img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: #ddd; 
+}
+
+.info-destino {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.info-destino h3 {
+    color: var(--color-primario);
+    margin-bottom: 0.5rem;
+}
+
+.info-destino p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; 
+}
+
+.btn-descarga {
+    display: inline-block;
+    text-align: center;
+    background-color: var(--color-acento);
+    color: var(--color-blanco);
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: var(--radio-borde);
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-descarga:hover {
+    background-color: #2980B9;
+}
+
+/* ==========================================================================
+   ACERCA DE Y CONTACTO
+   ========================================================================== */
+.contenedor-acerca {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contenedor-acerca p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.formulario-contacto {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--color-blanco);
+    padding: 2rem;
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-tarjeta);
+}
+
+.grupo-input {
+    margin-bottom: 1.5rem;
+}
+
+.grupo-input label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--color-primario);
+}
+
+.grupo-input input, 
+.grupo-input textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.grupo-input input:focus, 
+.grupo-input textarea:focus {
+    outline: none;
+    border-color: var(--color-acento);
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.btn-enviar {
+    width: 100%;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    border: none;
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: var(--radio-borde);
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-enviar:hover {
+    background-color: #1A252F;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer {
+    background-color: var(--color-primario);
+    color: #ccc;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* ==========================================================================
+   RESPONSIVO (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    .tabs-botones {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-tab {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+}
